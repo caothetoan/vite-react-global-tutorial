@@ -1,8 +1,8 @@
 .selectedWallet {
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: column nowrap;
   justify-content: flex-start;
-
+  align-items: center;
   padding: 0.6em 1.2em;
   margin-bottom: 0.5em;
 
@@ -10,7 +10,8 @@
   font-size: 1em;
   font-weight: 500;
 }
-.selectedWallet > img {
+
+.selectedWallet>img {
   width: 2em;
   height: 1.5em;
   margin-right: 1em;
