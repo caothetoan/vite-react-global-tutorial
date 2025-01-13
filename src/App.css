@@ -11,9 +11,11 @@
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
@@ -22,6 +24,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -39,4 +42,50 @@
 
 .read-the-docs {
   color: #888;
+}
+
+/* Responsive support */
+@media (max-width: 1024px) {
+  #root {
+    padding: 1.5rem;
+  }
+
+  .logo {
+    height: 5em;
+    padding: 1em;
+  }
+
+  .card {
+    padding: 1.5em;
+  }
+}
+
+@media (max-width: 768px) {
+  #root {
+    padding: 1rem;
+  }
+
+  .logo {
+    height: 4em;
+    padding: 0.5em;
+  }
+
+  .card {
+    padding: 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  #root {
+    padding: 0.5rem;
+  }
+
+  .logo {
+    height: 3em;
+    padding: 0.25em;
+  }
+
+  .card {
+    padding: 0.5em;
+  }
 }
