@@ -76,7 +76,7 @@ export const useDeviceOrientation = (): UseDeviceOrientationData => {
             // @ts-ignore
             DeviceOrientationEvent.requestPermission
             // @ts-ignore
-            && typeof DeviceMotionEvent.requestPermission === 'function'
+            && typeof DeviceOrientationEvent.requestPermission === 'function'
         ) {
             let permission: PermissionState;
             try {
