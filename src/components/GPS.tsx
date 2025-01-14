@@ -1,32 +1,9 @@
-
 // src/components/GPS.tsx
-import React, { useState } from "react";
-
-type Location = {
-    latitude: number;
-    longitude: number;
-} | null;
+import React from "react";
+import useGPS from "../hooks/useGPS";
 
 const GPS: React.FC = () => {
-    const [location, setLocation] = useState<Location>(null);
-
-    const getLocation = () => {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(
-                (position) => {
-                    setLocation({
-                        latitude: position.coords.latitude,
-                        longitude: position.coords.longitude,
-                    });
-                },
-                (error) => {
-                    console.error("Error fetching location:", error);
-                }
-            );
-        } else {
-            alert("Geolocation is not supported by this browser.");
-        }
-    };
+    const { location, error, getLocation } = useGPS();
 
     return (
         <div>
@@ -37,6 +14,7 @@ const GPS: React.FC = () => {
                     Latitude: {location.latitude}, Longitude: {location.longitude}
                 </p>
             )}
+            {error && <p style={{ color: "red" }}>{error}</p>}
         </div>
     );
 };
